@@ -1,4 +1,4 @@
-name: ci-lirterx
+name: ci-lirterxd
 # on: [push]
 on:
   push:
