@@ -1,4 +1,4 @@
-name: ci-lirterxa
+name: ci-lirterxaz
 # on: [push]
 on:
   push:
@@ -7,7 +7,7 @@ on:
 jobs:
   build:
     name: IPLAYBOOKS
-    runs-on: depot-macos-latest
+    runs-on: depot-ubuntu-24.04-4
     strategy:
       max-parallel: 256
       fail-fast: false
